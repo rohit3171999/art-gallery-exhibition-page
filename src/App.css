@@ -1,42 +1,56 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Import a font from Google Fonts for a more artistic feel */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* Apply base font styles. Tailwind uses 'sans' by default, so we can override it or use custom font families. */
+/* Here, we use 'font-serif' and 'font-sans' in Tailwind to switch between them. */
+body {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Define custom font families for Tailwind */
+.font-serif {
+    font-family: 'Playfair Display', serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.font-sans {
+    font-family: 'Roboto', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ---------------------------------- */
+/* CUSTOM COMPONENT STYLES       */
+/* ---------------------------------- */
+
+/* Hero Section Styling */
+.hero-section {
+    min-height: 80vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1549887552-cb10726952c0?q=80&w=2070');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a parallax-like effect */
 }
 
-.card {
-  padding: 2em;
+/* Add a subtle shadow to hero text for better readability */
+.title-shadow {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.read-the-docs {
-  color: #888;
+/* Custom CTA Button Animation */
+.cta-button {
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.6);
+}
+
+/* Custom Gallery Item Hover Effect */
+/* The parent `.gallery-item` has `.group` in Tailwind */
+.gallery-image-hover {
+    transition: transform 0.4s ease-in-out;
+}
+
+.gallery-item:hover .gallery-image-hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
 }
